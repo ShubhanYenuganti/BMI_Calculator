@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" type = "text/css" href = "{{ url_for('static', filename = 'style.css') }}">
+    <title>BMI Calculator</title>
+</head>
+<body>
+    <h1 class = 'head1'>BMI Calculator</h1>
+    <div>
+        <form class = "form1" method = "POST" action = "/">
+            <label for "weight">Weight (kgs) </label><br>
+            <input type = "text" name = "weight"><br>
+            <label for "height">Height (m) </label><br>
+            <input type = "text" name = "height"><br><br>
+            <button type = "submit" value = "Submit">Submit</button>
+        </form>
+    </div>
+
+    <div class = 'result'>
+        {% if format_bmi %}
+            <p>Your BMI is {{ format_bmi }}</p>
+            <p>You're {{ health }}</p>
+        {% endif %}
+    </div>
+
+</body>
+</html>
+
+<!--Fonts-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
